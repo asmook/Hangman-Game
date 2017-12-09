@@ -1,12 +1,15 @@
 // 1) create an array of potential words
 var hangmanWords = ["slipper", "gloves", "coat", "snow", "blanket", "soup", "apple-cider", "cuddle", "hot-chocolate", "fire", "christmas", "family"];
 
+
 // 2) select a random word from the array above 
 // hint -- use Math.floor and Math.random to randomly select one
 var numWords = hangmanWords.length;
 var selectedNumber = Math.floor(Math.random()*numWords);
 
 // 3) set the selected word to a variable (like selectedWord)
+// var selectedNumber =document.getMyElementById("currentword");
+
 var selectedWord = hangmanWords[selectedNumber];
 
 // 4) use the length of the selectedWord to create a NEW variable
@@ -20,7 +23,7 @@ var selectedWord = hangmanWords[selectedNumber];
 
 //initalize the letters and blanks variable. loop through- the letters of the selected word. making a copy of 
 //the selected word filling in underscores instead of the actual letters and also keeping dashes in their appropriate location.
-//!= means not equal
+//!= means not equal. ask about <= syntax
 var lettersAndBlanks = "";
 for (var i = 0; i <= selectedWord.length - 1; i++) {
 	if (selectedWord[i] != "-") {
@@ -117,7 +120,8 @@ window.addEventListener("keypress", function (event) {
 				//then decrement from number of guesses remaining
 				incorrectGuessesRemaining -= 1;
 				//recording the incorrect key press (adds one value to the end of the array)
-				incorrectGuesses.push(event.key);
+				incorrectGuesses.push(event.key); console.log(incorrectGuessesRemaining)
+				document.getElementById("guesses").innerText ="hello"
 			}
 			//reset so that way the logic works as intended, the next time through the event. it runs through this entire function 
 			//every time we press a key
@@ -129,18 +133,20 @@ window.addEventListener("keypress", function (event) {
 		if (lettersAndBlanks == selectedWord) {
 			winOrLose = "win"
 			wins += 1;
+			document.getElementById("Wins").innerText = wins;
 			reset();
 		}
-		//if no moer guesses are availiable, lose
+		//if no more guesses are availiable, lose
 		if (incorrectGuessesRemaining == 0){
 			winOrLose = "lose"
 			losses += 1;
+			document.getElementById("Losses").innerText = losses;
 			reset();
 		}
 	}
 	
 	// Cancel the default action to avoid it being handled twice
-	//meh-idk
+	//meh-idk, overriding the browsers default behavior. often used with liknks and buttons. 
 	event.preventDefault();
 }, true);
 	// the last option dispatches the event to the listener first,
