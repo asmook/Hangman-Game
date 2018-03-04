@@ -1,0 +1,53 @@
+@charset "UTF-8";
+
+h1 {
+	text-align: center;
+}
+h2 {
+	font-weight: bold;
+
+}
+
+#red {
+	color: red;
+}
+#blue {
+	color: blue;
+}
+
+
+#green{
+	color: green;
+}
+#b{
+	font-size: 30px;
+}
+#t{
+	font-size: 4px;
+}
+#c{
+	text-align: center;
+}
+#bold{
+	font-weight: bold;
+}
+#f{
+	font-style: italic;
+	font-family: "arial", sans-serif;
+}
+
+.styledFont {
+	color: orange;
+	text-align: center;
+}
+
+#styledImage {
+	border-style: solid;
+	border-width: 10px;
+	border-color: orange;
+}
+#p{
+	font-size: 20px;
+	color: orange;
+	font-weight: bold;
+}
