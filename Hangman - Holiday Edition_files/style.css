@@ -1,0 +1,16 @@
+h2{
+	color: blue;
+	text-transform: lowercase;
+}
+ body{
+ 	background-color: yellow;
+ 	text-align: center;
+ }
+
+ h1{
+ 	color: blue;
+ 	font-size: 50px;
+ 	text-transform: uppercase;
+ 	border: 12px dotted green;
+ 	line-height: 120px; 
+ }
